@@ -31,6 +31,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
+			//commit check
 			String sql = "select * from users where user_name='"+request.getParameter("user_name")+"'and user_password='"+request.getParameter("user_password")+"'"; 
 			PreparedStatement statement=DbConnection.getConnection().prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
